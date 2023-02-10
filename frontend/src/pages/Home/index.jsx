@@ -32,7 +32,10 @@ export function Home() {
       <Content>
         <Section title="My notes">
           <Notes
-            data={{ title: 'React', tags: [{ id: '1', name: 'NodeJS' }] }}
+            data={{
+              title: 'React',
+              tags: [{ id: '1', name: 'NodeJS' }]
+            }}
           />
         </Section>
       </Content>

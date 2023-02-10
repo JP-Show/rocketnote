@@ -46,6 +46,7 @@ export const Logout = styled.div`
   border: none;
   background: none;
   align-items: center;
+  cursor: pointer;
 
   > SVG {
     color: ${({ theme }) => theme.COLORS.GRAY_100};
