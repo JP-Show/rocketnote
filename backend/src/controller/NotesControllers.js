@@ -14,7 +14,7 @@ class NotesController {
 
     const linksInsert = links.map(link => {
       return {
-        note_id,
+        note_id: Number(note_id),
         url: link
       }
     })
@@ -23,15 +23,14 @@ class NotesController {
 
     const tagsInsert = tags.map(name => {
       return {
-        note_id,
+        note_id: Number(note_id),
         name,
         user_id
       }
     })
 
     await knex('tags').insert(tagsInsert)
-
-    res.json()
+    return res.json()
   }
   async show(req, res) {
     const { id } = req.params

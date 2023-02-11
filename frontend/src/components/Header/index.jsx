@@ -2,6 +2,8 @@ import { RiShutDownLine } from 'react-icons/ri'
 import { Container, Profile, Logout } from './styles'
 import { useAuth } from '../../hooks/auth'
 
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
+
 import { api } from '../../services/api'
 
 export function Header() {
