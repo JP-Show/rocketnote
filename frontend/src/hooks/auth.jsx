@@ -9,7 +9,6 @@ function AuthProvider({ children }) {
   function signOut() {
     localStorage.removeItem('@rocketnote:user')
     localStorage.removeItem('@rocketnote:token')
-
     setData({})
   }
 

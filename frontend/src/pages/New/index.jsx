@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Container, Form } from './styles'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { Header } from '../../components/Header'
 import { Input } from '../../components/Input'
@@ -24,6 +24,10 @@ export function New() {
 
   const navigate = useNavigate()
 
+  function handleBack() {
+    navigate(-1)
+  }
+
   function handleAddLink() {
     setLinks(prevState => [...prevState, newLink])
     setNewLink('')
@@ -44,6 +48,20 @@ export function New() {
   }
 
   async function handleNewNote() {
+    if (newTag) {
+      return alert("You left a tag on input's add new tag, delete or add tag")
+    }
+
+    if (newLink) {
+      return alert(
+        "You left a link on input's add new link, delete or add link"
+      )
+    }
+
+    if (!title) {
+      return alert('You need to put a any title')
+    }
+
     await api.post('/notes', {
       title,
       description,
@@ -66,7 +84,7 @@ export function New() {
         <Form>
           <header>
             <h1>New Note</h1>
-            <Link to="/">back</Link>
+            <a onClick={handleBack}>back</a>
           </header>
           <Input
             placeholder="Title"

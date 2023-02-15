@@ -12,6 +12,10 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       font-size: 1.5rem;
     }
+    button {
+      background: none;
+      border: none;
+    }
   }
 `
 export const Form = styled.form`
