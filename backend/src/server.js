@@ -1,4 +1,5 @@
 require('express-async-errors')
+require('dotenv/config')
 
 const cors = require('cors')
 const migrationsRun = require('./database/sqlite/migrations')
@@ -19,7 +20,7 @@ app.use(routes)
 
 migrationsRun()
 
-const URL = '3333'
+const URL = process.env.PORT || 3333
 
 app.use((error, req, res, next) => {
   if (error instanceof AppError) {
